@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, Zap, ArrowRight, TrendingUp, Users, Laptop, BookOpen, Atom, Calculator, BarChart3, HelpCircle, GraduationCap } from 'lucide-react';
+import { Sparkles, CheckCircle2, Zap, ArrowRight, TrendingUp, Users, Laptop, BookOpen, Atom, Calculator, BarChart3, HelpCircle, GraduationCap, Star } from 'lucide-react';
 import checkIcon from '../assets/check-icon.png';
 
 export default function HeroSection({ onOpenModal }) {
@@ -72,13 +72,36 @@ export default function HeroSection({ onOpenModal }) {
           </p>
 
           {/* Action CTAs */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '44px' }}>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '20px' }}>
             <button className="btn-gold" onClick={() => onOpenModal('demo')} style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
               <Sparkles size={20} /> BOOK FREE DEMO CLASS
             </button>
             <button className="btn-navy" onClick={() => onOpenModal('enroll')} style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
               JOIN 15-DAY BATCH (₹399) <ArrowRight size={18} />
             </button>
+          </div>
+
+          {/* Social Proof Rating Bar */}
+          <div style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            background: 'rgba(255, 255, 255, 0.9)',
+            border: '1px solid #E2E8F0',
+            padding: '6px 18px',
+            borderRadius: '9999px',
+            fontSize: '0.86rem',
+            color: '#334155',
+            fontWeight: 700,
+            marginBottom: '40px',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.04)'
+          }}>
+            <div style={{ display: 'flex', gap: '2px' }}>
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} size={15} fill="#F59E0B" color="#F59E0B" />
+              ))}
+            </div>
+            <span><strong style={{ color: '#0F172A' }}>4.9 / 5.0 Rating</strong> by 2,450+ Students across India</span>
           </div>
 
           {/* Target Audience Badges */}

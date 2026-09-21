@@ -11,8 +11,8 @@ const faqs = [
     a: "Yes! You can choose your individual subject track (e.g. pure Mathematics, pure Science, or pure Commerce) or enroll in our all-in-one comprehensive combo batch. During registration, simply select your desired subject focus."
   },
   {
-    q: "What is the fee and what is included in the ₹399 enrollment?",
-    a: "The complete 15-day course fee is only ₹399 (limited-time student discount). This includes daily 60-minute live interactive lectures, 15 Daily Practice Problem sheets (DPPs) with step-by-step video solutions, formula mind maps, chapter summary notes, and full-length grand mock assessment."
+    q: "What are the course fees and plan options?",
+    a: "We offer two affordable student plans: 1) Starter Small Course (Single Subject Crash Course) for ₹500, and 2) Complete 15-Day Masterclass (Comprehensive All-Subject Track — Maths, Science & Commerce, Daily DPPs, 1-on-1 Doubt Sessions, and Grand Mock Assessment) for ₹1,000. Both options include downloadable notes and lifetime recording access."
   },
   {
     q: "What if I miss a live class due to school or personal reasons?",

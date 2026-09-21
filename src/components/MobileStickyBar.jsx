@@ -31,7 +31,7 @@ export default function MobileStickyBar({ onOpenModal }) {
           className="btn-primary"
           style={{ flex: 1, justifyContent: 'center', padding: '10px 14px', fontSize: '0.85rem' }}
         >
-          Enroll ₹399 <ArrowRight size={14} />
+          Enroll from ₹500 <ArrowRight size={14} />
         </button>
       </div>
 

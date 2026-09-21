@@ -121,11 +121,12 @@ export default function Navbar({ onOpenModal }) {
           </a>
 
           {/* Desktop Links */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '26px' }} className="desktop-nav">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '22px' }} className="desktop-nav">
             <a href="#subjects" style={navLinkStyle}>Subjects</a>
             <a href="#curriculum" style={navLinkStyle}>15-Day Roadmap</a>
             <a href="#practicelab" style={navLinkStyle}>Study Lab</a>
             <a href="#calculator" style={navLinkStyle}>Score Booster</a>
+            <a href="#pricing" style={navLinkStyle}>Plans & Fees</a>
             <a href="#reviews" style={navLinkStyle}>Results</a>
             <a href="#motivation" style={navLinkStyle}>Inspiration</a>
             <a href="#faq" style={navLinkStyle}>FAQ</a>
@@ -145,7 +146,7 @@ export default function Navbar({ onOpenModal }) {
               className="btn-primary"
               style={{ padding: '9px 20px', fontSize: '0.85rem' }}
             >
-              Enroll ₹399 <ArrowRight size={15} />
+              Enroll from ₹500 <ArrowRight size={15} />
             </button>
           </div>
 
@@ -187,6 +188,7 @@ export default function Navbar({ onOpenModal }) {
           <a href="#curriculum" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>🗓️ 15-Day Study Roadmap</a>
           <a href="#practicelab" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>🔬 Interactive Study Lab</a>
           <a href="#calculator" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>📈 Score Booster Calculator</a>
+          <a href="#pricing" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>💰 Plans & Course Fees (₹500 / ₹1,000)</a>
           <a href="#reviews" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>⭐ Student Results & Testimonials</a>
           <a href="#motivation" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>🔥 Daily Motivation & Quotes</a>
           <a href="#faq" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>❓ Frequently Asked Questions</a>
@@ -204,7 +206,7 @@ export default function Navbar({ onOpenModal }) {
               className="btn-primary"
               style={{ flex: 1, justifyContent: 'center' }}
             >
-              Enroll ₹399
+              Enroll from ₹500
             </button>
           </div>
         </div>

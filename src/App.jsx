@@ -6,6 +6,7 @@ import SubjectsShowcase from './components/SubjectsShowcase';
 import CurriculumTimeline from './components/CurriculumTimeline';
 import PracticeLab3D from './components/PracticeLab3D';
 import ScoreBoosterCalc from './components/ScoreBoosterCalc';
+import PricingSection from './components/PricingSection';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
 import MotivationalQuotes from './components/MotivationalQuotes';
@@ -38,6 +39,7 @@ export default function App() {
           <CurriculumTimeline onOpenModal={handleOpenModal} />
           <PracticeLab3D onOpenModal={handleOpenModal} />
           <ScoreBoosterCalc onOpenModal={handleOpenModal} />
+          <PricingSection onOpenModal={handleOpenModal} />
           <TestimonialsSection />
           <FAQSection onOpenModal={handleOpenModal} />
           <MotivationalQuotes />

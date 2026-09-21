@@ -8,9 +8,12 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
   const [studentClass, setStudentClass] = useState('Class 10 Board Prep');
   const [subject, setSubject] = useState('All 3 Subjects (Maths, Science & Commerce)');
   const [batchTime, setBatchTime] = useState('Evening Batch (5:00 PM - 6:30 PM)');
+  const [coursePlan, setCoursePlan] = useState('full'); // 'full' (₹1000) or 'small' (₹500)
   const [submitted, setSubmitted] = useState(false);
 
   if (!isOpen) return null;
+
+  const planPrice = coursePlan === 'small' ? 500 : 1000;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -113,10 +116,11 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
               fontSize: '0.88rem',
               color: '#334155'
             }}>
-              <div>📚 <strong>Subject Track:</strong> {subject}</div>
+              <div>📚 <strong>Course Plan:</strong> {mode === 'demo' ? 'Free Demo Session (₹0)' : (coursePlan === 'small' ? 'Small Course (₹500)' : 'Full 15-Day Masterclass (₹1,000)')}</div>
+              <div style={{ marginTop: '4px' }}>📖 <strong>Subject Track:</strong> {subject}</div>
               <div style={{ marginTop: '4px' }}>🎓 <strong>Grade:</strong> {studentClass}</div>
               <div style={{ marginTop: '4px' }}>⏰ <strong>Batch:</strong> {batchTime}</div>
-              <div style={{ marginTop: '4px' }}>💰 <strong>Status:</strong> {mode === 'demo' ? 'Free Demo Seat Reserved (₹0)' : 'Confirmed 15-Day Batch (₹399)'}</div>
+              <div style={{ marginTop: '4px' }}>💰 <strong>Status:</strong> {mode === 'demo' ? 'Free Demo Seat Reserved (₹0)' : `Confirmed Enrollment - ₹${planPrice.toLocaleString('en-IN')}`}</div>
             </div>
 
             <button
@@ -142,19 +146,64 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
               marginBottom: '12px'
             }}>
               {mode === 'demo' ? <Sparkles size={14} /> : <Zap size={14} />}
-              {mode === 'demo' ? '100% FREE DEMO CLASS' : '15-DAY MASTERCLASS ENROLLMENT'}
+              {mode === 'demo' ? '100% FREE DEMO CLASS' : 'COURSE ENROLLMENT (₹500 / ₹1,000)'}
             </div>
 
             <h3 style={{ fontSize: '1.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '6px' }}>
-              {mode === 'demo' ? 'Reserve Your Free Demo Seat' : 'Enroll in 15-Day Study Program'}
+              {mode === 'demo' ? 'Reserve Your Free Demo Seat' : 'Enroll in Study Karo Classes'}
             </h3>
             <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '24px' }}>
               {mode === 'demo'
                 ? 'Join our live interactive lecture on Maths, Science, or Commerce at zero cost.'
-                : 'Get complete 15-day live tuition, daily practice sheets, and mock tests for just ₹399.'}
+                : 'Choose between our focused Small Course (₹500) or Full 15-Day Masterclass (₹1,000).'}
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              
+              {/* Plan Choice when in Enroll Mode */}
+              {mode === 'enroll' && (
+                <div>
+                  <label style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', display: 'block', marginBottom: '8px' }}>
+                    Select Course Package *
+                  </label>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
+                    <div
+                      onClick={() => setCoursePlan('small')}
+                      style={{
+                        padding: '12px',
+                        borderRadius: '14px',
+                        border: coursePlan === 'small' ? '2px solid #2563EB' : '1px solid #CBD5E1',
+                        background: coursePlan === 'small' ? '#EFF6FF' : '#FFFFFF',
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#475569' }}>Small Course</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0F172A' }}>₹500</div>
+                      <div style={{ fontSize: '0.7rem', color: '#059669', fontWeight: 700 }}>Single Subject (7 Days)</div>
+                    </div>
+
+                    <div
+                      onClick={() => setCoursePlan('full')}
+                      style={{
+                        padding: '12px',
+                        borderRadius: '14px',
+                        border: coursePlan === 'full' ? '2px solid #2563EB' : '1px solid #CBD5E1',
+                        background: coursePlan === 'full' ? '#EFF6FF' : '#FFFFFF',
+                        cursor: 'pointer',
+                        textAlign: 'center',
+                        transition: 'all 0.2s ease'
+                      }}
+                    >
+                      <div style={{ fontSize: '0.78rem', fontWeight: 700, color: '#1E40AF' }}>Full Masterclass</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 900, color: '#1E40AF' }}>₹1,000</div>
+                      <div style={{ fontSize: '0.7rem', color: '#2563EB', fontWeight: 700 }}>All Subjects (15 Days)</div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <div>
                 <label style={{ fontSize: '0.85rem', fontWeight: 700, color: '#334155', display: 'block', marginBottom: '6px' }}>
                   Student Full Name *
@@ -275,7 +324,7 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
                   Total Payable:
                 </span>
                 <span style={{ fontSize: '1.3rem', fontWeight: 900, color: '#0F172A' }}>
-                  {mode === 'demo' ? 'FREE (₹0)' : '₹399 only'}
+                  {mode === 'demo' ? 'FREE (₹0)' : `₹${planPrice.toLocaleString('en-IN')} only`}
                 </span>
               </div>
 
@@ -284,7 +333,7 @@ export default function RegistrationModal({ isOpen, mode, onClose }) {
                 className={mode === 'demo' ? 'btn-gold' : 'btn-primary'}
                 style={{ width: '100%', justifyContent: 'center', padding: '14px', fontSize: '1rem', marginTop: '6px' }}
               >
-                {mode === 'demo' ? 'CONFIRM FREE DEMO SEAT' : 'COMPLETE ENROLLMENT (₹399)'} <ArrowRight size={18} />
+                {mode === 'demo' ? 'CONFIRM FREE DEMO SEAT' : `COMPLETE ENROLLMENT (₹${planPrice.toLocaleString('en-IN')})`} <ArrowRight size={18} />
               </button>
 
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', fontSize: '0.75rem', color: '#64748B' }}>

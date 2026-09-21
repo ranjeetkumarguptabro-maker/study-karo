@@ -428,7 +428,7 @@ export default function CurriculumTimeline({ onOpenModal }) {
               <Sparkles size={18} /> Book Free Demo Class
             </button>
             <button className="btn-emerald" onClick={() => onOpenModal('enroll')} style={{ padding: '14px 28px' }}>
-              Join Full 15 Days (₹399)
+              Enroll in Course (from ₹500)
             </button>
           </div>
         </div>

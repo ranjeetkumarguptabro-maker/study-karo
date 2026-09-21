@@ -247,7 +247,7 @@ export default function SubjectsShowcase({ onOpenModal }) {
                 className="btn-navy"
                 style={{ padding: '12px 24px', fontSize: '0.9rem' }}
               >
-                Join Full 15-Day Batch (₹399)
+                Enroll in Course (from ₹500)
               </button>
             </div>
           </div>
@@ -326,22 +326,31 @@ export default function SubjectsShowcase({ onOpenModal }) {
               <div style={{
                 background: '#FFFFFF',
                 borderRadius: '16px',
-                padding: '16px',
+                padding: '18px',
                 border: '1px solid #E2E8F0',
                 textAlign: 'center'
               }}>
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#64748B', marginBottom: '4px' }}>
-                  15-Day Batch Fee
+                <div style={{ fontSize: '0.82rem', fontWeight: 800, color: '#64748B', textTransform: 'uppercase', marginBottom: '8px' }}>
+                  Choose Your Learning Plan
                 </div>
-                <div style={{ fontSize: '1.8rem', fontWeight: 900, color: '#0F172A' }}>
-                  ₹399 <span style={{ fontSize: '0.9rem', color: '#10B981', fontWeight: 700 }}>Save 80% (Limited Seats)</span>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '12px' }}>
+                  <div style={{ background: '#F8FAFC', padding: '10px', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#475569' }}>Small Course</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0F172A' }}>₹500</div>
+                    <div style={{ fontSize: '0.68rem', color: '#059669', fontWeight: 700 }}>Single Subject</div>
+                  </div>
+                  <div style={{ background: '#EFF6FF', padding: '10px', borderRadius: '12px', border: '1.5px solid #2563EB' }}>
+                    <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#1D4ED8' }}>Full Masterclass</div>
+                    <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#1E40AF' }}>₹1,000</div>
+                    <div style={{ fontSize: '0.68rem', color: '#2563EB', fontWeight: 700 }}>All 15 Days</div>
+                  </div>
                 </div>
                 <button
                   onClick={() => onOpenModal('enroll')}
                   className="btn-primary"
-                  style={{ width: '100%', marginTop: '10px', justifyContent: 'center', padding: '10px' }}
+                  style={{ width: '100%', justifyContent: 'center', padding: '10px', fontSize: '0.9rem' }}
                 >
-                  Enroll in {selectedSubject.toUpperCase()} Batch
+                  Enroll Now (from ₹500)
                 </button>
               </div>
             </div>

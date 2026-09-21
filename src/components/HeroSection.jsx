@@ -77,7 +77,7 @@ export default function HeroSection({ onOpenModal }) {
               <Sparkles size={20} /> BOOK FREE DEMO CLASS
             </button>
             <button className="btn-navy" onClick={() => onOpenModal('enroll')} style={{ padding: '16px 36px', fontSize: '1.05rem' }}>
-              JOIN 15-DAY BATCH (₹399) <ArrowRight size={18} />
+              JOIN COURSES (₹500 / ₹1,000) <ArrowRight size={18} />
             </button>
           </div>
 

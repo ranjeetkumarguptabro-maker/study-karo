@@ -121,12 +121,13 @@ export default function Navbar({ onOpenModal }) {
           </a>
 
           {/* Desktop Links */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '28px' }} className="desktop-nav">
+          <nav style={{ display: 'flex', alignItems: 'center', gap: '26px' }} className="desktop-nav">
             <a href="#subjects" style={navLinkStyle}>Subjects</a>
             <a href="#curriculum" style={navLinkStyle}>15-Day Roadmap</a>
             <a href="#practicelab" style={navLinkStyle}>Study Lab</a>
             <a href="#calculator" style={navLinkStyle}>Score Booster</a>
             <a href="#reviews" style={navLinkStyle}>Results</a>
+            <a href="#motivation" style={navLinkStyle}>Inspiration</a>
             <a href="#faq" style={navLinkStyle}>FAQ</a>
           </nav>
 
@@ -187,6 +188,7 @@ export default function Navbar({ onOpenModal }) {
           <a href="#practicelab" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>🔬 Interactive Study Lab</a>
           <a href="#calculator" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>📈 Score Booster Calculator</a>
           <a href="#reviews" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>⭐ Student Results & Testimonials</a>
+          <a href="#motivation" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>🔥 Daily Motivation & Quotes</a>
           <a href="#faq" onClick={() => setMobileMenuOpen(false)} style={{ ...navLinkStyle, fontSize: '1.05rem' }}>❓ Frequently Asked Questions</a>
 
           <div style={{ display: 'flex', gap: '12px', marginTop: '10px' }}>

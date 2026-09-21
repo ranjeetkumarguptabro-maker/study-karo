@@ -87,6 +87,7 @@ export default function Footer({ onOpenModal }) {
               <a href="#practicelab" style={linkStyle}>Interactive Learning Lab</a>
               <a href="#calculator" style={linkStyle}>Score Booster Calculator</a>
               <a href="#reviews" style={linkStyle}>Student Success Stories</a>
+              <a href="#motivation" style={linkStyle}>🔥 Student Motivation & Quotes</a>
               <a href="#faq" style={linkStyle}>Help & FAQs</a>
             </div>
           </div>

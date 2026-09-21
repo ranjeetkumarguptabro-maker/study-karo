@@ -8,6 +8,7 @@ import PracticeLab3D from './components/PracticeLab3D';
 import ScoreBoosterCalc from './components/ScoreBoosterCalc';
 import TestimonialsSection from './components/TestimonialsSection';
 import FAQSection from './components/FAQSection';
+import MotivationalQuotes from './components/MotivationalQuotes';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Footer from './components/Footer';
 import RegistrationModal from './components/RegistrationModal';
@@ -39,6 +40,7 @@ export default function App() {
           <ScoreBoosterCalc onOpenModal={handleOpenModal} />
           <TestimonialsSection />
           <FAQSection onOpenModal={handleOpenModal} />
+          <MotivationalQuotes />
         </main>
 
         <Footer onOpenModal={handleOpenModal} />
